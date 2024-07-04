@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Location</title>
+
+    <link rel="stylesheet" href="./styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            /* background-color: #360369; */
+            /* height: 100%; */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            color: white;
+            /* Center vertically */
+            font-family: Montserrat;
+            /* font-weight: 700;
+            font-size: 100px; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home"
+        style="background-color: #360369; height: 100vh; width: 100vw; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 50px;">
+        <p style="font-weight: 700; font-size: 100px;">Weather Api</p>
+        <button id="fetchData" style="border-radius: 3px;" rel="noopener noreferrer">Fetch Data</button>
+    </div>
+
+    <div class="app" style=" height: 100vh; width: 100vw; display: none; color: white;">
+        <div style="height: 900px; padding: 30px; background-color: #360369;">
+            <h1 style="font-size: 54px;">Welcome To The Weather App</h1>
+            <p style="margin-block: 10px; font-size: 36px;">Here is your current location</p>
+            <div id="location" style="display: none; justify-content: start; gap: 10px; margin-block: 10px;">
+                <button class="btn lat">
+                    Lat
+                </button>
+                <button class="btn long">
+                    Long
+                </button>
+            </div>
+            <div style="width: 100%; height: 600px; overflow: hidden;">
+                <iframe id="map" style="display: none;"
+                    src="https://maps.google.com/maps?q=35.856737, 10.606619&z=15&output=embed" width="100%"
+                    height="100%" style="overflow: hidden;" frameborder="0" style="border:0"></iframe>
+            </div>
+        </div>
+
+        <div style=" background-color: white; padding: 30px;">
+            <h1 style="font-size: 54px; color: #360369;">Your Weather Data</h1>
+            <div class="loader" id="loader"></div>
+            <div id="weatherData">
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
